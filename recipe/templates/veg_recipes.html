@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veg Recipes</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("https://as2.ftcdn.net/v2/jpg/01/05/59/03/1000_F_105590311_cAD04gw6SOQ7WSVgau0uvrql76ThgbQ9.jpg");
+        background-size: cover;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+      }
+      h1 {
+        margin: 20px;
+        color: #333;
+        text-align: center;
+        color: #f5f5f5;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+      li {
+        margin: 10px;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease-in-out,
+          transform 0.2s ease-in-out;
+      }
+      li:hover {
+        background-color: #fff;
+        transform: translateY(-2px);
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      button {
+        text-align: center;
+        margin: 20px auto; /* Center the button horizontally */
+        padding: 15px 30px;
+        background-color: #4caf50; /* Change button background color */
+        color: white; /* Change button text color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out,
+          transform 0.2s ease-in-out;
+      }
+      button:hover {
+        background-color: #e7eae8; /* Darker background color on hover */
+        transform: translateY(-2px);
+      }
+      button a {
+        text-decoration: none;
+        color: rgb(17, 16, 16);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Veg Recipes</h1>
+    </header>
+    <ul>
+      {% for recipe in recipes %} {% if recipe.category == 'veg' %}
+
+      <li>
+        <a href="{{ url_for('view_recipe', recipe_id=recipe.id) }}"
+          >{{ recipe.title }}</a
+        >
+      </li>
+      {% endif %} {% endfor %}
+    </ul>
+    <center>
+      <button>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+      </button>
+    </center>
+  </body>
+</html>

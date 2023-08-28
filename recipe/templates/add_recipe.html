@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Add New Recipe</title>
+    <style>
+      body {
+        background-image: url("https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/a7/bf/63/a7bf63df-f2e3-6076-7fb6-4fcc9f77334e/acd57511-0c96-4188-835f-28c50bfc6fbb_ipadPro129_6.jpg/643x0w.jpg");
+        background-size: 1450px;
+        filter: brightness(0.4);
+      }
+      h1,
+      body {
+        text-align: center;
+        padding: auto;
+      }
+      h1 {
+        color: rgb(17, 16, 16);
+        font-size: 3rem;
+        text-shadow: 0 0 10px #f1e4e4, 0 0 20px #b20925, 0 0 30px #cd148feb;
+        padding-right: 60%;
+      }
+      form {
+        padding-right: 60%;
+      }
+      input[type="text"],
+      textarea {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: #0f0a0a;
+        padding: 6px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 50%;
+      }
+      button {
+        text-align: center;
+        margin: 20px auto; /* Center the button horizontally */
+        padding: 15px 30px;
+        background-color: #b86938; /* Change button background color */
+        color: white; /* Change button text color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out,
+          transform 0.2s ease-in-out;
+      }
+      button:hover {
+        background-color: #e7eae8; /* Darker background color on hover */
+        transform: translateY(-2px);
+      }
+      button a {
+        text-decoration: none;
+        color: rgb(15, 2, 2);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Add New Recipe</h1>
+    <form method="post" action="{{ url_for('add_recipe') }}">
+      <label for="title"><font face="mistral" size="5"> TITLE:</font></label
+      ><br />
+      <input type="text" id="title" name="title" /><br />
+      <label for="ingredients"
+        ><font face="mistral" size="5">INGREDIENTS:</font></label
+      ><br />
+      <textarea id="ingredients" name="ingredients"></textarea><br />
+      <label for="instructions"
+        ><font face="mistral" size="5"> INSTRUCTIONS:</font></label
+      ><br />
+      <textarea id="instructions" name="instructions"></textarea><br />
+      <br />
+      <label for="category">Category:</label>
+      <br />
+      <br />
+      <select id="category" name="category">
+        <option value="veg">Vegetarian</option>
+        <br />
+        <option value="non_veg">Non-Vegetarian</option>
+      </select>
+      <br /><br />
+
+      <br />
+      <input type="submit" value="Add Recipe" />
+      <br />
+      <br />
+      <button><a href="{{ url_for('index') }}">Back to Home</a></button>
+    </form>
+  </body>
+</html>

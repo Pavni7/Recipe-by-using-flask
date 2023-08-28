@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ recipe['title'] }}</title>
+    <style>
+      body {
+        background-color: rgba(7, 101, 0, 0.879);
+        background-image: url("https://img.freepik.com/premium-photo/food-cooking-background-stone-texture-with-sea-salt-pepper-garlic-parsley-light-grey-abstract-food-background-empty-space-text-can-be-used-food-posters-design-menu-top-view_253362-16400.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: brightness(1);
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .content {
+        text-align: center;
+        padding: 20px;
+      }
+
+      button {
+        background-color: rgb(235, 230, 224);
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      button:hover {
+        background-color: rgb(86, 145, 106);
+      }
+      h1 {
+        color: rgb(17, 16, 16);
+        font-size: 3rem;
+        text-shadow: 0 0 10px #f1e4e4, 0 0 20px #b20925, 0 0 30px #cd148feb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>{{ recipe['title'] }}</h1>
+      <img
+        src="{{ recipe['image_url'] }}"
+        alt="{{ recipe['title'] }}"
+        width="300"
+      />
+      <h2><font face="mistral" size="5">Ingredients</font></h2>
+      <p>
+        <strong><font face="mistral" size="5"></font></strong> {{
+        recipe['ingredients'] }}
+      </p>
+      <h3><font face="mistral" size="5">Instructions</font></h3>
+      <p>
+        <strong><font face="mistral" size="5"></font></strong> {{
+        recipe['instructions'] }}
+      </p>
+
+      <button><a href="{{ url_for('index') }}">Back to Recipes</a></button>
+      <button onclick="window.history.back()">Go Back</button>
+    </div>
+  </body>
+</html>

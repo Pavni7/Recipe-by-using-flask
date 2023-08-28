@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipe Sharing Platform</title>
+    <style>
+      body {
+        background-image: url("https://st4.depositphotos.com/1000589/30118/i/450/depositphotos_301181378-stock-photo-assorted-indian-food-on-black.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        filter: brightness(0.6);
+      }
+      .header {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px 0;
+        text-align: center;
+      }
+      .header h1 {
+        margin: 0;
+        color: #fff;
+      }
+      .nav {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .nav a {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #f8f1f1;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out;
+      }
+      .nav a:hover {
+        background-color: #0f0f0f;
+      }
+      .add-recipe-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #e74c3c;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out;
+      }
+      .add-recipe-btn:hover {
+        background-color: #c0392b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Recipe Sharing Platform</h1>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="nav">
+      <a href="{{ url_for('veg_recipes') }}">View Veg Recipes</a>
+      <a href="{{ url_for('non_veg_recipes') }}">View Non-Veg Recipes</a>
+    </div>
+    <center>
+      <a class="add-recipe-btn" href="{{ url_for('add_recipe') }}"
+        >Add New Recipe</a
+      >
+    </center>
+  </body>
+</html>
